@@ -57,34 +57,38 @@ class TelaDashboard extends StatelessWidget {
             // Desafio 1: Adicionar o 3º Card (Icons.camera_alt, '45', 'Fotos') com Expanded.
             // Desafio 8: Refatorar esta seção usando GridView.count (grade 2x2).
             // ============================================================
-            Row(
+            GridView.count(
+              crossAxisCount: 2,
+              crossAxisSpacing: 12,
+              mainAxisSpacing: 12,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              childAspectRatio: 1.5,
               children: [
-                Expanded(
-                  child: BlocoEstatistica(
-                    icone: Icons.flutter_dash,
-                    quantidade: '124',
-                    titulo: 'Aves Vistas',
-                    cor: Colors.teal.shade100,
-                  ),
+                BlocoEstatistica(
+                  icone: Icons.flutter_dash,
+                  quantidade: '124',
+                  titulo: 'Aves Vistas',
+                  cor: Colors.teal.shade100,
                 ),
-                const SizedBox(width: 12.0),
-                Expanded(
-                  child: BlocoEstatistica(
-                    icone: Icons.place,
-                    quantidade: '18',
-                    titulo: 'Locais Visitados',
-                    cor: Colors.teal.shade50,
-                  ),
+                BlocoEstatistica(
+                  icone: Icons.place,
+                  quantidade: '18',
+                  titulo: 'Locais Visitados',
+                  cor: Colors.teal.shade50,
                 ),
-                const SizedBox(width: 12.0),
                 // TODO [Desafio 1]: Adicionar aqui o terceiro Card com Expanded (Ícone: Icons.camera_alt, '45', 'Fotos')
-                Expanded(
-                  child: BlocoEstatistica(
-                    icone: Icons.camera_alt,
-                    quantidade: '45',
-                    titulo: 'Fotos',
-                    cor: Colors.teal.shade100,
-                  ),
+                BlocoEstatistica(
+                  icone: Icons.camera_alt,
+                  quantidade: '45',
+                  titulo: 'Fotos',
+                  cor: Colors.teal.shade100,
+                ),
+                BlocoEstatistica(
+                  icone: Icons.visibility,
+                  quantidade: '32',
+                  titulo: 'Observações',
+                  cor: Colors.teal.shade50,
                 ),
               ],
             ),
@@ -240,7 +244,7 @@ class TelaDashboard extends StatelessWidget {
             // Row(
             //   children: [
             //     Text(
-            //       'Este texto é muito grande e ultrapassa o espaço disponível na tela, causando um erro de RenderFlex overflow.',
+            //       'Esse texto é muito grande e ultrapassa o espaço disponível na tela, causando um erro de RenderFlex overflow.',
             //     ),
             //   ],
             // ),
@@ -253,7 +257,7 @@ class TelaDashboard extends StatelessWidget {
                 SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    'Este texto é muito grande, mas agora se ajusta ao espaço disponível na tela sem provocar overflow.',
+                    'Esse texto é muito grande, mas agora se ajusta ao espaço disponível na tela sem provocar overflow.',
                   ),
                 ),
               ],
