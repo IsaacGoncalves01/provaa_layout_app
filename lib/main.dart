@@ -171,6 +171,25 @@ class TelaDashboard extends StatelessWidget {
                 ),
                 // TODO [Desafio 5]: Adicionar segundo Positioned no canto inferior esquerdo:
                 // Positioned(bottom: -8, left: -8, child: Container(color: Colors.green, child: Text('Confirmado')))
+                Positioned(
+                  bottom: -8,
+                  left: -8,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Text(
+                      'Confirmado',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 24.0),
@@ -219,12 +238,12 @@ class TelaDashboard extends StatelessWidget {
             // Row(
             //   children: [
             //     Text(
-            //       'esse texto é muito grande e ultrapassa o espaço disponível na tela, causando um erro de RenderFlex overflow.',
+            //       'Este texto é muito grande e ultrapassa o espaço disponível na tela, causando um erro de RenderFlex overflow.',
             //     ),
             //   ],
             // ),
 
-            
+            // Correção utilizando Expanded:
             const SizedBox(height: 24.0),
             const Row(
               children: [
@@ -232,7 +251,7 @@ class TelaDashboard extends StatelessWidget {
                 SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    'esse texto é muito grande, mas agora se ajusta ao espaço disponível na tela sem provocar overflow.',
+                    'Este texto é muito grande, mas agora se ajusta ao espaço disponível na tela sem provocar overflow.',
                   ),
                 ),
               ],
@@ -243,5 +262,4 @@ class TelaDashboard extends StatelessWidget {
     );
   }
 }
-
 
