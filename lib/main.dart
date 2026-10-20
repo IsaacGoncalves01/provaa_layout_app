@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 // TODO Desafio 7: Importar o widget customizado criado em lib/widgets/bloco_estatistica.dart
 // import 'widgets/bloco_estatistica.dart';
@@ -180,6 +181,33 @@ class TelaDashboard extends StatelessWidget {
             // texto e botão/ícone com MainAxisAlignment.spaceBetween.
             // ============================================================
             // TODO [Desafio 3]: Implementar a seção "Últimos Registros" aqui
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.teal.shade50,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Row(
+                    children: [
+                      Icon(Icons.list, color: Colors.teal),
+                      SizedBox(width: 12),
+                      Text(
+                        'Últimos Registros',
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.arrow_forward, color: Colors.teal),
+                  ),
+                ],
+              ),
+            ),
 
             // ============================================================
             // 📍 DESAFIO 4 (1,5 ponto):
