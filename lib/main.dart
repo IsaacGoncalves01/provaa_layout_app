@@ -214,10 +214,34 @@ class TelaDashboard extends StatelessWidget {
             // Demonstrar/comprovar a ocorrência e correção de um erro de overflow
             // (RenderFlex overflow) via prints ou bloco comentado.
             // ============================================================
+
+            // Exemplo que provoca RenderFlex overflow:
+            // Row(
+            //   children: [
+            //     Text(
+            //       'esse texto é muito grande e ultrapassa o espaço disponível na tela, causando um erro de RenderFlex overflow.',
+            //     ),
+            //   ],
+            // ),
+
+            
+            const SizedBox(height: 24.0),
+            const Row(
+              children: [
+                Icon(Icons.info_outline, color: Colors.teal),
+                SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    'esse texto é muito grande, mas agora se ajusta ao espaço disponível na tela sem provocar overflow.',
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
 }
+
 
